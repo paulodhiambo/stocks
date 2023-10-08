@@ -16,9 +16,9 @@ func Init(init *config.Initialization) *gin.Engine {
 		v1 := api.Group("/v1")
 		{
 			stocks := v1.Group("/stock")
-			stocks.GET("/", init.StockCtrl.GetAllStocks)
+			stocks.GET("", init.StockCtrl.GetAllStocks)
+			stocks.POST("", init.StockCtrl.AddStock)
 			stocks.GET("/:id", init.StockCtrl.GetStockById)
-			stocks.POST("/", init.StockCtrl.AddStock)
 			stocks.DELETE("/:id", init.StockCtrl.DeleteStock)
 		}
 
