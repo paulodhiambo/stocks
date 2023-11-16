@@ -1,5 +1,5 @@
  # Variables
- IMAGE_NAME=stocks_image
+ IMAGE_NAME=dimingo/stocks:latest
  CONTAINER_NAME=stocks_container
 
 go_install:
