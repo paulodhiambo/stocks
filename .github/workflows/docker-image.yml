@@ -17,6 +17,6 @@ jobs:
       - name: Build the Docker image
         run: make package
       - name: Login to dockerhub
-        run: docker login -u  ${{ secrets.DOCKER_TOKEN }}
+        run: docker login -u dimingo -p ${{ secrets.DOCKER_TOKEN }}
       - name: push to dockerhub
         run: docker push dimingo/stocks:latest
