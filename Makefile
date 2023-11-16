@@ -9,7 +9,7 @@ wire_gen: go_install
 	wire gen stocks/config
 
  # Build the Go application
-build: wire_gen
+build: go_install
 	go build -o ./stocks/build
 
 # Build the Docker image
