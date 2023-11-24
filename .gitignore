@@ -1,0 +1,4 @@
+./.terraform
+./stocks
+terraform.tfstate.backup
+terraform.tfstate
