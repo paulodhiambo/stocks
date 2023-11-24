@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: make package
+      - name: Login to dockerhub
+        run: docker login -u dimingo -p ${{ secrets.DOCKER_TOKEN }}
+      - name: push to dockerhub
+        run: docker push dimingo/stocks:latest
